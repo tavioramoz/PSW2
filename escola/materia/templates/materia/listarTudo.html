@@ -1,0 +1,35 @@
+<a href="/materia/add/"> Add novo aluno </a>
+<table border= 1px>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Cidade</th>
+            <th>Excluir</th>
+            <th>Editar</th>
+        </tr>
+    <thead>  
+
+<tbody>
+    {% if aluno %}
+    {% for alunos in aluno %}
+    <tr>
+        <td>{{ alunos.nome }}</td>
+        <td>{{ alunos.idade }}</td>
+        <td>{{ alunos.cidade }}</td>
+        <td><a href="/materia/deletar/{{aluno.id}}">Deletar</td>
+        <td><a href="/materia/editar/{{aluno.id}}">Editar</td>
+    </tr>
+    {% endfor %}
+    {% else %}
+    <tr>
+        <td colspan="5">Não tem registro. </td>
+    </tr> 
+    {% endif %}
+</tbody>
+</table>
+
+
+
+
+
